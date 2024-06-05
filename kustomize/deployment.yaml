@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-hello-app
+  namespace: echo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: echo
+  template:
+    metadata:
+      labels:
+        app: echo
+    spec:
+      containers:
+        - name: echo
+          image: 410045895482.dkr.ecr.us-west-2.amazonaws.com/http-echo
+          ports:
+            - name: http
+              containerPort: 5678
+          args: ["-text", "Hello world!"]
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5678

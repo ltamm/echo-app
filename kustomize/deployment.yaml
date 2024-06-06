@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: echo
-          image: 410045895482.dkr.ecr.us-west-2.amazonaws.com/http-echo:latest  # {"$imagepolicy": "flux-system:echo-app"}
+          image: 410045895482.dkr.ecr.us-west-2.amazonaws.com/http-echo:latest  # {"$imagepolicy": "echo:echo-app"}
           ports:
             - name: http
               containerPort: 5678

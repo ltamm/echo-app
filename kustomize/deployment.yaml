@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,7 +15,7 @@ spec:
     spec:
       containers:
         - name: echo
-          image: 410045895482.dkr.ecr.us-west-2.amazonaws.com/http-echo:latest  # {"$imagepolicy": "flux-system:echo-app-latest"}
+          image: 410045895482.dkr.ecr.us-west-2.amazonaws.com/http-echo:a-2 # {"$imagepolicy": "flux-system:echo-app-latest"}
           ports:
             - name: http
               containerPort: 5678
